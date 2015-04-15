@@ -1,6 +1,7 @@
 module.exports = {
 
   comp_name: 'Nashe',
+  home: 'Home',
   
   header: {
     sl1               : 'We\'ve taken all the best ukrainian goods and brands',

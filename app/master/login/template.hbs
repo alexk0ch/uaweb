@@ -1,2 +1,25 @@
-<h1>Login</h1>
+<div class="row">
+  <div class="bl_breadcrumps col-xs-12">
+    
+    <ul class="bl_breadcrumps__list list-inline">
+      <li class="bl_breadcrumps__item">
+        {{#link-to 'master.index' class="bl_breadcrumps__link"}}
+          {{model.home}}  
+        {{/link-to}} &gt;
+      </li>
+      <li class="bl_breadcrumps__item">{{model.header.enter}}</li>
+    </ul>
+
+    <div class="bl-article">
+      <div class="bl_article_info col-xs-9">
+        <h1 class="bl_article__title">{{model.header.enter}}</h1>
+        <p class="bl_article__text">
+          
+        </p>
+      </div>  
+    </div>
+
+    <h1></h1>
+  </div>
+</div>
 {{outlet}}
