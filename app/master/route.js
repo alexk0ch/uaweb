@@ -11,7 +11,9 @@ export default Ember.Route.extend({
   },
 
   model (params, transition) {
-    return $.get('/api/locales/' + params.locale);
+    return $.get('/api/locales/' + params.locale).error(() => {
+      this.replaceWith('/ua');
+    })
   }
 
 });

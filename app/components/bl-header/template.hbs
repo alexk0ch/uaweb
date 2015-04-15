@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="container">
+    <div class="row">
+      
+      <div class="bl-logo">
+        <a href="#" class="bl-logo__link col-xs-3"><img class="bl-logo__img" src="img/logo.png" alt=""></a>
+      </div>
+      
+      <div class="bl-header col-xs-6">
+        <p class="bl-header__text">{{model.header.sl1}}</p>
+        <p class="bl-header__text">{{model.header.sl2}}</p>
+        {{bl-header-search model=model}}
+      </div>
+
+      <div class="bl-location col-xs-3">
+        {{bl-location-city model=model}}
+        {{bl-lang model=model}}
+
+        <div class="bl-location__cabinet">
+        
+        {{#link-to 'master.login' class="bl-location__link enter"}}
+          {{model.header.enter}}
+        {{/link-to}}
+        
+        {{#link-to 'master.favourite' class="bl-location__link favorite"}}
+          {{model.header.favorite}}
+        {{/link-to}}
+
+        </div>
+
+      </div>
+      {{yield}}
+    </div>
+  </div>
+</header>

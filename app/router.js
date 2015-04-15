@@ -6,7 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.resource('language', { path: '/:locale'}, function () {
-    
-  });
+  this.resource('master', { path: '/:locale'}, function () {
+    this.route('favourite');
+    this.route('login');
+  });  
 });

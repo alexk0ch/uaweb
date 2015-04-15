@@ -11,10 +11,16 @@ module.exports = {
     favorite          : 'Вибране'
   },
 
-  city: {
-    KIEV              : 'Київ',
-    LVIV              : 'Львів'
-  },
+  cities              : [
+                          {
+                            key : 'KIEV',
+                            val : 'Київ'
+                          },
+                          {
+                            key : 'LVIV',
+                            val : 'Львів'
+                          }
+                      ],                      
 
   footer: {
     be_with_us        : 'Будьте з нами',

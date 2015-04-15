@@ -21,7 +21,11 @@ module.exports = function(app) {
   });
 
   applicationRouter.get('/:locale', function(req, res) {
-    res.send(locales[req.params.locale]);
+    var isLocaleAvailable = locales[req.params.locale];
+    if (isLocaleAvailable)
+      res.send(locales[req.params.locale]);
+    else 
+      res.status(404).send({error: 'no such locale'})
   });
 
   applicationRouter.put('/:locale', function(req, res) {

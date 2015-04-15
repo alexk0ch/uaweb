@@ -1,0 +1,6 @@
+<select class="bl-location__city">
+  {{#each city in model.cities}}
+    <option value="{{city.key}}">{{city.val}}</option>
+  {{/each}}
+</select>
+{{yield}}
