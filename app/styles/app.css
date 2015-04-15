@@ -3,3 +3,15 @@
 .bl-location .ember-view {
   display: inline-block;
 }
+
+body > div{
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  min-height: 60vh;
+}
+
+.bl-location__link {
+  margin-left: 30px;
+}

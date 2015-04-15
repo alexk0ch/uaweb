@@ -1,0 +1,30 @@
+<div class="bl_foot_social col-xs-4">
+  <p class="bl_foot_social__text">{{labels.footer.be_with_us}}:</p>
+  <a href="#" class="bl_foot_social__link tw"></a>
+  <a href="#" class="bl_foot_social__link vk"></a>
+  <a href="#" class="bl_foot_social__link fb"></a>
+</div>
+<div class="bl_foot_rss col-xs-8 text-right">
+  <form class="bl_foot_rss__form" action="#" method="post">
+    <label class="bl_foot_rss__label">{{labels.footer.news}}: </label>
+    <input class="bl_foot_rss__input" type="email" placeholder="{{labels.footer.yourEmail}}" required="">
+    <button class="bl_foot_rss__btn" type="submit">{{labels.footer.subscr}}</button>
+  </form>
+</div>
+<div class="bl-logo _footer col-xs-3"><a href="#" class="bl-logo__link"><img class="bl-logo__img" src="img/footer_logo.png" alt=""></a></div>
+<div class="bl_foot_menu col-xs-9 text-right">
+  <ul class="bl_foot_menu__list list-inline">
+    <li class="bl_foot_menu__item"><a href="#" class="bl_foot_menu__link">{{labels.menu.about}}</a></li>
+    <li class="bl_foot_menu__item"><a href="#" class="bl_foot_menu__link">{{labels.menu.adv}}</a></li>
+    <li class="bl_foot_menu__item"><a href="#" class="bl_foot_menu__link">{{labels.menu.search}}</a></li>
+    <li class="bl_foot_menu__item"><a href="#" class="bl_foot_menu__link">{{labels.menu.cat}}</a></li>
+    <li class="bl_foot_menu__item"><a href="#" class="bl_foot_menu__link">{{labels.menu.blog}}</a></li>
+    <li class="bl_foot_menu__item"><a href="#" class="bl_foot_menu__link">{{labels.menu.business}}</a></li>
+    <li class="bl_foot_menu__item"><a href="#" class="bl_foot_menu__link">{{labels.menu.contact}}</a></li>
+  </ul>
+</div>
+<div class="bl_copyright col-xs-12">
+  <p class="bl_copyright__text pull-right">Designed by Alex Shlafer</p>
+  <p class="bl_copyright__text">© {{labels.comp_name}} {{labels.year}}. {{labels.footer.arr}}</p>
+</div>
+{{yield}}

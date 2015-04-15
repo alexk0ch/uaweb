@@ -12,15 +12,11 @@ module.exports = function(app) {
     ua : ua
   };
 
-  applicationRouter.get('/', function(req, res) {
+  applicationRouter.get('/locales', function(req, res) {
     res.send(ua);
   });
 
-  applicationRouter.post('/', function(req, res) {
-    res.status(201).end();
-  });
-
-  applicationRouter.get('/:locale', function(req, res) {
+  applicationRouter.get('/locales/:locale', function(req, res) {
     var isLocaleAvailable = locales[req.params.locale];
     if (isLocaleAvailable)
       res.send(locales[req.params.locale]);
@@ -28,17 +24,5 @@ module.exports = function(app) {
       res.status(404).send({error: 'no such locale'})
   });
 
-  applicationRouter.put('/:locale', function(req, res) {
-    res.send({
-      'locale': {
-        locale: req.params.locale
-      }
-    });
-  });
-
-  applicationRouter.delete('/:locale', function(req, res) {
-    res.status(204).end();
-  });
-
-  app.use('/api/locales', applicationRouter);
+  app.use('/api', applicationRouter);
 };

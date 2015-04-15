@@ -9,6 +9,6 @@ export default Router.map(function() {
   this.resource('master', { path: '/:locale'}, function () {
     this.route('favourite');
     this.route('login');
+    this.route('admin');
   });
-  this.route('not-found', { path: '/*path' } );
 });

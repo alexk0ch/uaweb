@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="container">
+    <div class="row">
+      
+      <div class="bl-logo">
+        {{#link-to 'master.index' class="bl-logo__link col-xs-3"}}
+          <img class="bl-logo__img" src="img/logo.png" alt="">
+        {{/link-to}}
+      </div>
+      
+      <div class="bl-header col-xs-6">
+        <p class="bl-header__text">{{labels.header.sl1}}</p>
+        <p class="bl-header__text">{{labels.header.sl2}}</p>
+        {{nashe-header/header-search labels=labels}}
+      </div>
+
+      <div class="bl-location col-xs-3">
+        {{yield}}
+      </div>
+      
+    </div>
+  </div>
+</header>

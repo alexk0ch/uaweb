@@ -1,0 +1,11 @@
+{{#if session.isLoggedIn}}
+    <a class="bl-location__link enter" href="#" {{action 'logout' on="click"}}>
+      {{labels.header.exit}}
+    </a>
+  {{else}}
+    {{#link-to 'master.admin' class="bl-location__link enter"}}
+      {{labels.header.enter}}
+    {{/link-to}}
+{{/if}}
+
+{{yield}}

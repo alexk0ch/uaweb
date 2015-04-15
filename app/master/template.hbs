@@ -1,5 +1,16 @@
 <div class="main-wrapper">
-  {{bl-header model=model}}
+  
+  {{#nashe-header labels=model.labels}}
+    {{nashe-header/header-city labels=model.labels}}
+    {{nashe-header/header-lang labels=model.labels}}
+    <div class="bl-location__cabinet">
+      {{nashe-header/header-auth-state labels=model.labels onLogout="logout"}}
+      {{#link-to 'master.favourite' class="bl-location__link favorite"}}
+        {{model.labels.header.favorite}}
+      {{/link-to}}
+    </div>
+  {{/nashe-header}}
+
   <div class="content">
     <div class="container">
       {{outlet}}
@@ -11,7 +22,7 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      
+      {{nashe-footer labels=model.labels}}
     </div>
   </div>
 </footer>
