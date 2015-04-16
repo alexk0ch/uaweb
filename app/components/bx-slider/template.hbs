@@ -1,0 +1,15 @@
+<div class="bl-slider col-xs-9">
+  <ul class="bxslider">
+    {{#each slide in slides}}
+    <li class="bl-slider__item">
+      <div class="bl-slider__block-text">
+          <h2 class="bl-slider__title">{{{slide.title}}}</h2>
+          <p class="bl-slider__text">{{{slide.content}}}</p>
+          <a href="#" class="bl-slider__link">{{t 'show_more'}}</a>
+      </div>
+      <img class="bl-slider__img" src="img/slide.jpg" alt="">
+    </li>
+    {{/each}}
+  </ul>
+</div>
+{{yield}}

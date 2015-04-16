@@ -28,6 +28,24 @@ body > div{
   overflow-y: visible;
 }
 
+.bl-catalog {
+  min-height: 100vh;
+}
+
 .bl-catalog > .bl-catalog__title {
   cursor: pointer;
+}
+
+.bl_popular__slide-arrow a {
+  display: block;
+  height: 100%;
+}
+
+.bl_popular__changer {
+  transition: left 0.5s ease;
+}
+
+.bx-viewport .row {
+  margin-left: 0;
+  margin-right: 0;
 }

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   willInsertElement () {
-    $(this.element).find('.bl-catalog__list')
+    Ember.$(this.element).find('.bl-catalog__list');
   },
 
   expanded: false,

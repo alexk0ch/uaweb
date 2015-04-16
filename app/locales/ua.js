@@ -2,6 +2,7 @@ export default {
   locale: 'ua',
   comp_name: 'Наше',
   home: 'Головна',
+  show_more: 'Детальнiше',
 
   forms: {
     login: 'Ваш логiн',
@@ -46,5 +47,9 @@ export default {
 
   cat: {
     caption: 'Каталог Товарiв'
+  },
+
+  goods: {
+    popular: 'Популярні товари'
   }
 };

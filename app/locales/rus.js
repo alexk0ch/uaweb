@@ -2,6 +2,7 @@ export default {
   locale: 'rus',
   comp_name: 'Наше',
   home: 'Главная',
+  show_more: 'Дальше',
 
   forms: {
     login: 'Ваш логин',
@@ -46,5 +47,9 @@ export default {
 
   cat: {
     caption: 'Каталог Товаров'
+  },
+
+  goods: {
+    popular: 'Популярные товары'
   }
 };

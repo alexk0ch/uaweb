@@ -5,18 +5,20 @@ export default Ember.Route.extend({
   beforeModel (params) {
     var savedLocale = localStorage.getItem('locale');
     var tail = params.intent.url.split('/').slice(2).join('/');
+    this.session.set('locale', savedLocale);
     if (savedLocale && params.locale !== savedLocale) {
       this.replaceWith('/' + savedLocale + '/' + tail);
     }
   },
 
-  model (params, transition) {
+  model () {
     return {
+      locale: localStorage.getItem('locale') || 'ua',
       year : function () {
         return new Date().getFullYear();
       }.property(),
       cities: ['cities.KIEV', 'cities.LVIV']
-    }
+    };
   },
 
   actions : {

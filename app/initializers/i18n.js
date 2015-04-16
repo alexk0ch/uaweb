@@ -1,3 +1,5 @@
+import Ember from 'ember';
+
 export function initialize(container, application) {
   var set = Ember.set;
   set(application, 'locale', localStorage.getItem('locale') || 'ua');

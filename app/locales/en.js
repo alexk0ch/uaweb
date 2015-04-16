@@ -2,6 +2,7 @@ export default {
   locale: 'en',
   comp_name: 'Nashe',
   home: 'Home',
+  show_more: 'More',
 
   forms: {
     login: 'Your login',
@@ -47,5 +48,9 @@ export default {
 
   cat: {
     caption: 'Catalog of goods'
+  },
+
+  goods: {
+    popular: 'Popular goods'
   }
 };
