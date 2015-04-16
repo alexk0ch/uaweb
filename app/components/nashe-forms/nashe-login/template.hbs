@@ -1,12 +1,12 @@
 <form {{action 'login' username password on="submit"}}>
   <div class="form-group">
-    <label for="input-username">{{labels.forms.login}}</label>
+    <label for="input-username">{{t 'forms.login'}}</label>
     {{input type="text" id="input-username" class="form-control" value=username}}
   </div>
   <div class="form-group">
-    <label for="input-password">{{labels.forms.pass}}</label>
+    <label for="input-password">{{t 'forms.pass'}}</label>
     {{input type="password" id="input-password" class="form-control" value=password}}
   </div>
-  <input type="submit" value="{{labels.forms.loginBtn}} {{usernameFormatted}}" class="btn btn-primary pull-right"/>
+  <input type="submit" value="{{t 'forms.loginBtn'}} {{usernameFormatted}}" class="btn btn-primary pull-right"/>
 </form>
 {{yield}}

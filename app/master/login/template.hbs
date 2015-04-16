@@ -4,18 +4,18 @@
     <ul class="bl_breadcrumps__list list-inline">
       <li class="bl_breadcrumps__item">
         {{#link-to 'master.index' class="bl_breadcrumps__link"}}
-          {{model.labels.home}}  
+          {{t 'home'}}  
         {{/link-to}} &gt;
       </li>
-      <li class="bl_breadcrumps__item">{{model.labels.header.enter}}</li>
+      <li class="bl_breadcrumps__item">{{t 'header.enter'}}</li>
     </ul>
 
     <div class="bl-article">
       <div class="bl_article_info col-xs-6 col-xs-push-3">
-        <span class="bl_article__top _date">{{model.labels.enterDescription}}</span>
-        <h1 class="bl_article__title">{{model.labels.header.enter}}</h1>
+        <span class="bl_article__top _date">{{t 'enterDescription'}}</span>
+        <h1 class="bl_article__title">{{t 'header.enter'}}</h1>
         <p class="bl_article__text" style="font-family: inherit">
-          {{nashe-forms/nashe-login labels=model.labels onLogin="login"}}
+          {{nashe-forms/nashe-login onLogin="login"}}
         </p>
       </div>  
     </div>

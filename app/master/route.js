@@ -11,16 +11,12 @@ export default Ember.Route.extend({
   },
 
   model (params, transition) {
-    return $.get('/api/locales/' + params.locale)
-    .success((data)=>{
-      data.labels.year = function () {
+    return {
+      year : function () {
         return new Date().getFullYear();
-      }.property();
-      return data
-    })
-    .error(()=>{
-      this.replaceWith('/ua');
-    });
+      }.property(),
+      cities: ['cities.KIEV', 'cities.LVIV']
+    }
   },
 
   actions : {
