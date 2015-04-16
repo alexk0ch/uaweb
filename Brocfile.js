@@ -18,5 +18,6 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 app.import('vendor/bootstrap/dist/css/bootstrap.css');
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
+app.import('vendor/momentjs/min/moment-with-locales.min.js');
 
 module.exports = app.toTree();

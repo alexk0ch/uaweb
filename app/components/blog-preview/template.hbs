@@ -1,0 +1,24 @@
+<div class="bl_blog clearfix">
+  <h2 class="bl_blog__title">{{t 'blog.title'}}<a href="#" class="bl_blog__link">{{t 'blog.all_posts'}}</a></h2>
+  <div class="row">
+    {{#each preview in blogPreview}}
+    <div class="bl_blog__article col-xs-4">
+      <div class="bl_blog__item">
+        <img class="bl_blog__img" src="{{preview.img}}" alt="">
+        <h3 class="bl_blog__item-title">{{{preview.title}}}</h3>
+        <div class="bl_blog__autor">
+          <img class="bl_blog__autor-img" src="{{preview.author_img}}" alt="">
+          <p class="bl_blog__autor-name">{{preview.author}}</p>
+          <p class="bl_blog__autor-public">{{format-date preview.date}}</p>
+          <p class="bl_blog__autor-preview">{{{preview.content}}}</p>
+        </div>
+        <div class="bl_blog__comment">
+          <p class="bl_blog__comment-counter">{{preview.comments_count}}</p>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+    
+  </div>
+</div>
+{{yield}}

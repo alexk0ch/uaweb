@@ -1,4 +1,24 @@
-{{goods/goods-catalog expanded=true}}
+{{#goods/goods-catalog expanded=true}}
+  {{goods/goods-catalog/good-of-the-day data=model.goodOfTheDay}}
+{{/goods/goods-catalog}}
+
 {{bx-slider slides=model.slides}}
-{{content-slider mode="horizontal" customControls="true"}}
+
+{{content-slider 
+  inRow=3 
+  data=model.goods 
+  mode="horizontal" 
+  customControls="true" 
+  heading='goods.popular'}}
 {{outlet}}
+
+{{content-slider 
+  inRow=3 
+  data=model.brands 
+  mode="horizontal" 
+  customControls="true" 
+  heading='brands.popular'}}
+{{outlet}}
+
+{{blog-preview blogPreview=model.blogPreview}}
+

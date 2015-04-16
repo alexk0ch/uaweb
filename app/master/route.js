@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   
   beforeModel (params) {
-    var savedLocale = localStorage.getItem('locale');
+    var savedLocale = localStorage.getItem('locale') || 'ua';
     var tail = params.intent.url.split('/').slice(2).join('/');
     this.session.set('locale', savedLocale);
     if (savedLocale && params.locale !== savedLocale) {

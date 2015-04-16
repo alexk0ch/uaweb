@@ -16,7 +16,8 @@ export default Ember.Component.extend({
     var mode = this.get('mode'),
         pager = this.get('pager'),
         customControls = this.get('customControls'),
-        $sliderRanger = Ember.$(this.element).find('.bl_popular__changer');
+        $sliderRanger = Ember.$(this.element).find('.bl_popular__changer'),
+        chunked = +this.get('inRow');
 
     if (mode) {
       config.mode = mode;
@@ -24,6 +25,13 @@ export default Ember.Component.extend({
 
     if (pager) {
       config.pager = true;
+    }
+
+    if (chunked) {
+      var goods = $(this.element).find('a');
+      for(var i = 0; i < goods.length; i += chunked) {
+        goods.slice(i, i + chunked).wrapAll("<li class='row'></li>");
+      }
     }
 
     if (customControls) {

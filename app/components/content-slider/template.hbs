@@ -1,97 +1,32 @@
 <div class="bl_popular col-xs-9">
-  <h2 class="bl_popular__title">{{t 'goods.popular'}}</h2>
+  <h2 class="bl_popular__title">{{t heading}}</h2>
   <span class="bl_popular__slide-arrow left"></span>
   <span class="bl_popular__slide-arrow right"></span>
   <div class="bl_popular__slider"><span class="bl_popular__changer"></span></div>
   
   <ul>
-    <li class="row">
+    {{#each chunk in data}}
       <a href="#" class="bl-catalog__day__link col-xs-4">
         <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">нове</p>
-          <img class="bl-catalog__day__img _popular" src="img/img.jpg" alt="">
-          <p class="bl-catalog__day__item_title">CВетер<br>чоловічий</p>
-          <p class="bl-catalog__day__item_category _popular">Гармонія</p>
-          <p class="bl-catalog__day__item_price">1290 грн.</p>
+          <p class="bl-catalog__day__new">{{t 'new_item'}}</p>
+          <img class="bl-catalog__day__img _popular" src="{{chunk.img}}" alt="">
+          <p class="bl-catalog__day__item_title">{{{chunk.title}}}</p>
+
+          {{#if chunk.cat}}
+            <p class="bl-catalog__day__item_category _popular">{{chunk.cat}}</p>   
+          {{/if}}
+          
+          {{#if chunk.vendor}}
+            <p class="bl-catalog__day__item_category _popular">{{chunk.vendor}}</p>
+          {{/if}}
+
+          {{#if chunk.price}}
+            <p class="bl-catalog__day__item_price">{{chunk.price}} {{t 'UAH'}}.</p>
+          {{/if}}
+
         </div>
-      </a>
-      <a href="#" class="bl-catalog__day__link col-xs-4">
-        <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">нове</p>
-          <img class="bl-catalog__day__img _popular" src="img/img2.jpg" alt="">
-          <p class="bl-catalog__day__item_title">коктейльна сукня<br>Жіноча</p>
-          <p class="bl-catalog__day__item_category _popular">Весна</p>
-          <p class="bl-catalog__day__item_price">5520 грн.</p>
-        </div>
-      </a>
-      <a href="#" class="bl-catalog__day__link col-xs-4">
-        <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">нове</p>
-          <img class="bl-catalog__day__img _popular" src="img/img3.jpg" alt="">
-          <p class="bl-catalog__day__item_title">Велосипед<br>“УкраЇна”</p>
-          <p class="bl-catalog__day__item_category _popular">ХВЗ</p>
-          <p class="bl-catalog__day__item_price">16 590 грн.</p>
-        </div>
-      </a>
-    </li>
-    <li class="row">
-      <a href="#" class="bl-catalog__day__link col-xs-4">
-        <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">нове</p>
-          <img class="bl-catalog__day__img _popular" src="img/img.jpg" alt="">
-          <p class="bl-catalog__day__item_title">CВетер<br>чоловічий</p>
-          <p class="bl-catalog__day__item_category _popular">Гармонія</p>
-          <p class="bl-catalog__day__item_price">1290 грн.</p>
-        </div>
-      </a>
-      <a href="#" class="bl-catalog__day__link col-xs-4">
-        <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">нове</p>
-          <img class="bl-catalog__day__img _popular" src="img/img2.jpg" alt="">
-          <p class="bl-catalog__day__item_title">коктейльна сукня<br>Жіноча</p>
-          <p class="bl-catalog__day__item_category _popular">Весна</p>
-          <p class="bl-catalog__day__item_price">5520 грн.</p>
-        </div>
-      </a>
-      <a href="#" class="bl-catalog__day__link col-xs-4">
-        <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">нове</p>
-          <img class="bl-catalog__day__img _popular" src="img/img3.jpg" alt="">
-          <p class="bl-catalog__day__item_title">Велосипед<br>“УкраЇна”</p>
-          <p class="bl-catalog__day__item_category _popular">ХВЗ</p>
-          <p class="bl-catalog__day__item_price">16 590 грн.</p>
-        </div>
-      </a>
-    </li>
-    <li class="row">
-      <a href="#" class="bl-catalog__day__link col-xs-4">
-        <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">нове</p>
-          <img class="bl-catalog__day__img _popular" src="img/img.jpg" alt="">
-          <p class="bl-catalog__day__item_title">CВетер<br>чоловічий</p>
-          <p class="bl-catalog__day__item_category _popular">Гармонія</p>
-          <p class="bl-catalog__day__item_price">1290 грн.</p>
-        </div>
-      </a>
-      <a href="#" class="bl-catalog__day__link col-xs-4">
-        <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">нове</p>
-          <img class="bl-catalog__day__img _popular" src="img/img2.jpg" alt="">
-          <p class="bl-catalog__day__item_title">коктейльна сукня<br>Жіноча</p>
-          <p class="bl-catalog__day__item_category _popular">Весна</p>
-          <p class="bl-catalog__day__item_price">5520 грн.</p>
-        </div>
-      </a>
-      <a href="#" class="bl-catalog__day__link col-xs-4">
-        <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">нове</p>
-          <img class="bl-catalog__day__img _popular" src="img/img3.jpg" alt="">
-          <p class="bl-catalog__day__item_title">Велосипед<br>“УкраЇна”</p>
-          <p class="bl-catalog__day__item_category _popular">ХВЗ</p>
-          <p class="bl-catalog__day__item_price">16 590 грн.</p>
-        </div>
-      </a>
-    </li>
+      </a>      
+    {{/each}}
   </ul>
 
 </div>

@@ -3,6 +3,8 @@ export default {
   comp_name: 'Nashe',
   home: 'Home',
   show_more: 'More',
+  new_item: 'New',
+  UAH: 'UAH',
 
   forms: {
     login: 'Your login',
@@ -52,5 +54,16 @@ export default {
 
   goods: {
     popular: 'Popular goods'
+  },
+
+  brands: {
+    popular: 'Popular brands'
+  },
+
+  blog: {
+    title: 'Blog',
+    all_posts: 'all posts',
+    author: 'Author',
+    similar_posts: 'Similar posts'
   }
 };

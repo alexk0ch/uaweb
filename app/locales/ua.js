@@ -3,6 +3,8 @@ export default {
   comp_name: 'Наше',
   home: 'Головна',
   show_more: 'Детальнiше',
+  new_item: 'Нове',
+  UAH: 'грн',
 
   forms: {
     login: 'Ваш логiн',
@@ -51,5 +53,16 @@ export default {
 
   goods: {
     popular: 'Популярні товари'
+  },
+
+  brands: {
+    popular: 'Популярнi бренди'
+  },
+
+  blog: {
+    title: 'Блог',
+    all_posts: 'всі статті',
+    author: 'Автор',
+    similar_posts: 'Cхожі статті'
   }
 };
