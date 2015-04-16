@@ -42,5 +42,9 @@ export default {
     blog              : 'Блог',
     business          : 'Вендорам',  
     contact           : 'Контакты'
+  },
+
+  cat: {
+    caption: 'Каталог Товаров'
   }
 };

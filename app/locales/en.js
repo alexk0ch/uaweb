@@ -43,5 +43,9 @@ export default {
     blog              : 'Blog',
     business          : 'For vendors',
     contact           : 'Contact'
+  },
+
+  cat: {
+    caption: 'Catalog of goods'
   }
 };
