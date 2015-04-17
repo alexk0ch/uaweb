@@ -3,20 +3,12 @@ module.exports = function(app) {
   var applicationRouter = express.Router();
 
   var goods = require('../data/goods/goods.js');
-  
-  goods.shared.forEach(function (data, i) {
-    extend(goods.ua[i], data);
-    extend(goods.rus[i], data);
-    extend(goods.en[i], data);
-  });
+  var blogPreview = require('../data/blog/blog-preview.js');
+  var blogFull = require('..//data/blog/blog-full.js');
 
-  var blogPreview = require('../data/blog-preview/blog-preview.js');
-
-  blogPreview.shared.forEach(function (data, i) {
-    extend(blogPreview.ua[i], data);
-    extend(blogPreview.rus[i], data);
-    extend(blogPreview.en[i], data);
-  });
+  putLocales(goods);
+  putLocales(blogPreview);
+  putLocales(blogFull);
 
   var goodOfTheDay = require('../data/goods/good-of-the-day.js');
   var brands = require('../data/brands/brands.js');  
@@ -41,6 +33,18 @@ module.exports = function(app) {
     res.send(localized_page);
   });
 
+  applicationRouter.get('/:locale/blog/posts/:id', function(req, res) {
+    var localized_blogPreview = blogPreview[req.params.locale];
+
+    var payload = blogFull[req.params.locale].filter(function (post) {
+      return post.id === +req.params.id
+    })[0];
+
+    payload.blogPreview = localized_blogPreview;
+
+    res.send(payload);
+  });
+
   app.use('/api', applicationRouter);
 };
 
@@ -55,3 +59,11 @@ function extend (target, source) {
   }
   return target;
 }
+
+function putLocales (obj) {
+  obj.shared.forEach(function (data, i) {
+    extend(obj.ua[i], data);
+    extend(obj.rus[i], data);
+    extend(obj.en[i], data);
+  })
+};

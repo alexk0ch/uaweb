@@ -28,7 +28,7 @@ export default Ember.Component.extend({
     }
 
     if (chunked) {
-      var goods = $(this.element).find('a');
+      var goods = $(this.element).find('ul > div');
       for(var i = 0; i < goods.length; i += chunked) {
         goods.slice(i, i + chunked).wrapAll("<li class='row'></li>");
       }

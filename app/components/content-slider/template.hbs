@@ -6,26 +6,7 @@
   
   <ul>
     {{#each chunk in data}}
-      <a href="#" class="bl-catalog__day__link col-xs-4">
-        <div class="bl-catalog__day__inner _popular">
-          <p class="bl-catalog__day__new">{{t 'new_item'}}</p>
-          <img class="bl-catalog__day__img _popular" src="{{chunk.img}}" alt="">
-          <p class="bl-catalog__day__item_title">{{{chunk.title}}}</p>
-
-          {{#if chunk.cat}}
-            <p class="bl-catalog__day__item_category _popular">{{chunk.cat}}</p>   
-          {{/if}}
-          
-          {{#if chunk.vendor}}
-            <p class="bl-catalog__day__item_category _popular">{{chunk.vendor}}</p>
-          {{/if}}
-
-          {{#if chunk.price}}
-            <p class="bl-catalog__day__item_price">{{chunk.price}} {{t 'UAH'}}.</p>
-          {{/if}}
-
-        </div>
-      </a>      
+      {{goods/good-popular productType=productType data=chunk popular=true wrapperClass="col-xs-4"}}
     {{/each}}
   </ul>
 

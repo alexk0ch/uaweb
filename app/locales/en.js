@@ -5,6 +5,7 @@ export default {
   show_more: 'More',
   new_item: 'New',
   UAH: 'UAH',
+  comments: 'comments',
 
   forms: {
     login: 'Your login',

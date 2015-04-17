@@ -1,19 +1,25 @@
 module.exports = {
   shared : [
     {
+      id: 0,
       img: 'img/blog_img1.jpg',
       author_img: 'img/autor1.png',
-      date: new Date().getTime()
+      date: new Date().getTime(),
+      views: 5379
     },
     {
+      id: 1,
       img: 'img/blog_img2.jpg',
       author_img: 'img/autor2.png',
-      date: new Date(2015, 2, 25).getTime()
+      date: new Date(2015, 2, 25).getTime(),
+      views: 3379
     },
     {
+      id: 2,
       img: 'img/blog_img3.jpg',
       author_img: 'img/autor3.png',
-      date: new Date(2015, 2, 8).getTime()
+      date: new Date(2015, 2, 8).getTime(),
+      views: 13379
     },
   ],
 

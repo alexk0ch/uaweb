@@ -1,24 +1,40 @@
-{{#goods/goods-catalog expanded=true}}
-  {{goods/goods-catalog/good-of-the-day data=model.goodOfTheDay}}
-{{/goods/goods-catalog}}
+<div class="container">
+  {{#goods/goods-catalog expanded=true}}
+    <div class="bl-catalog__day__item">
+      {{goods/good-popular productType='master.goods' data=model.goodOfTheDay}}
+    </div>
+  {{/goods/goods-catalog}}
 
-{{bx-slider slides=model.slides}}
+  {{bx-slider slides=model.slides}}
 
-{{content-slider 
-  inRow=3 
-  data=model.goods 
-  mode="horizontal" 
-  customControls="true" 
-  heading='goods.popular'}}
-{{outlet}}
+  {{content-slider 
+    inRow=3 
+    data=model.goods 
+    mode="horizontal" 
+    customControls="true" 
+    heading='goods.popular'
+    productType='master.goods'}}
 
-{{content-slider 
-  inRow=3 
-  data=model.brands 
-  mode="horizontal" 
-  customControls="true" 
-  heading='brands.popular'}}
-{{outlet}}
+  {{content-slider 
+    inRow=3 
+    data=model.brands 
+    mode="horizontal" 
+    customControls="true" 
+    heading='brands.popular'
+    productType='master.brands'}}
 
-{{blog-preview blogPreview=model.blogPreview}}
+  <div class="bl_blog clearfix">
+    <h2 class="bl_blog__title">{{t 'blog.title'}}
+      {{#link-to 'master.blog' class="bl_blog__link"}}
+        {{t 'blog.all_posts'}}
+      {{/link-to}}
+    </h2>
+    <div class="row">
+      {{#each preview in model.blogPreview}}
+        {{blog/blog-preview-item preview=preview}}
+      {{/each}}
+    </div>
+</div>
 
+  
+</div>

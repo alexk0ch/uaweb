@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="bl_blog _last clearfix">
+      <h2 class="bl_blog__title">{{t 'blog.similar_posts'}}</h2>
+      <span class="bl_popular__slide-arrow _blog left"></span>
+      <span class="bl_popular__slide-arrow _blog right"></span>
+      <ul>
+        {{#each preview in data}}
+          {{blog/blog-preview-item preview=preview}}
+        {{/each}}
+      </ul>
+      <br>
+    </div>    
+  </div>
+</div>
+{{yield}}

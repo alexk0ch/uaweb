@@ -12,24 +12,26 @@ body > div{
   min-height: 60vh;
 }
 
+.expandable .bl-catalog {
+  position: absolute;
+  width: 24%;
+  z-index: 900;
+}
+
 .bl-location__link {
   margin-left: 30px;
 }
 
-.bl-catalog > .bl-catalog__list.list-unstyled {
+.expandable .bl-catalog > .bl-catalog__list.list-unstyled {
   overflow-y: hidden;
-  max-height: 0;
-  transition: max-height 1s ease;
+  height: 0;
+  transition: height 0.3s ease;
   user-select: none;
 }
 
-.bl-catalog > .bl-catalog__list.list-unstyled.expanded {
-  max-height: initial;
+.expandable .bl-catalog > .bl-catalog__list.list-unstyled.expanded {
+  height: initial;
   overflow-y: visible;
-}
-
-.bl-catalog {
-  min-height: 100vh;
 }
 
 .bl-catalog > .bl-catalog__title {
@@ -49,3 +51,18 @@ body > div{
   margin-left: 0;
   margin-right: 0;
 }
+
+a.bl_blog__comment:hover,
+a.bl_blog__comment:focus,
+a.bl_blog__comment:active {
+  text-decoration: none;
+  background: url(../img/blog_arrow.png) 90% 20px no-repeat #ffc000;
+}
+
+.bl_article_info {
+  min-height: 200px;
+}
+
+.bx-wrapper .bl_blog__item {
+  margin-bottom: 30px; 
+} 

@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="bl_breadcrumps col-xs-12">
+    <ul class="bl_breadcrumps__list list-inline">
+      <li class="bl_breadcrumps__item">
+        {{#link-to 'master.index' class="bl_breadcrumps__link"}}
+          {{t 'home'}}  
+        {{/link-to}} &gt;
+      </li>
+      <li class="bl_breadcrumps__item">
+        {{#link-to 'master.blog' class="bl_breadcrumps__link"}}
+          {{t 'blog.title'}}  
+        {{/link-to}} &gt;
+      </li>
+      <li class="bl_breadcrumps__item">{{{model.title}}}</li>
+    </ul>               
+  </div>
+
+  <div class="row">
+    <div class="bl_article_info col-xs-9">
+      <span class="bl_article__top _date">{{format-date model.date}}</span>
+      <span class="bl_article__top _view">{{model.views}}</span>
+      <span class="bl_article__top _comments">{{model.comments_count}}</span>
+      <h1 class="bl_article__title">{{{model.title}}}</h1>
+      <p class="bl_article__text">{{model.content}}</p>
+    </div>
+
+    <div class="bl_article__autor col-xs-3">
+      <img class="bl_article__autor-img" src="{{model.author_img}}" alt="">
+      <p class="bl_article__autor-name">{{model.author}}</p>
+      <p class="bl_article__autor-prof">{{t 'blog.author'}}</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="bl_large">
+  <div class="container">
+  <div class="row">
+    <p class="bl_large__text">{{{model.bl_large_text}}}</p>
+  </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="bl_arttext">
+      <div class="bl_arttext__inner col-xs-9">
+        {{#each piece in model.huge_content_1}}
+          <p class="bl_arttext__text">{{{piece}}}</p>
+        {{/each}}
+      </div>
+      
+      {{#if model.companyOfTheDay}}
+        <div class="bl_arttext__item col-xs-3">
+          {{goods/good-popular data=model.companyOfTheDay popular=true blog=true arttext=true}}
+        </div>
+      {{/if}}
+
+    </div>
+  </div>
+</div>
+
+<div class="bl_gray">
+  <div class="container">
+    <div class="row">
+      <div class="bl_bloquote">
+        <div class="bl_bloquote__inner col-xs-9">
+          <p class="bl_bloquote__text">{{{model.bl-quote.text}}}</p>
+        </div>
+        <div class="bl_article__autor _gray col-xs-3">
+          <img class="bl_article__autor-img" src="{{model.bl-quote.src}}" alt="">
+          <p class="bl_article__autor-name">{{model.bl-quote.author}}</p>
+          <p class="bl_article__autor-prof">{{model.bl-quote.prof}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="bl_arttext clearfix">
+      <div class="bl_arttext__inner _last col-xs-9">
+        {{#each piece in model.huge_content_2}}
+          <p class="bl_arttext__text">{{{piece}}}</p>
+        {{/each}}
+      </div>
+
+      {{#if model.goodOfTheDay}}
+        <div class="bl_arttext__item col-xs-3">
+          {{goods/good-popular data=model.goodOfTheDay popular=true arttext=true}}
+        </div>
+      {{/if}}
+
+      <div class="bl_share _blog col-xs-12">
+        <a href="{{model.social.fb}}" class="bl_share__link"><img class="bl_share__img" src="img/share_fb.png" alt=""></a>
+        <a href="{{model.social.vk}}" class="bl_share__link"><img class="bl_share__img" src="img/share_vk.png" alt=""></a>
+        <a href="{{model.social.twitter}}" class="bl_share__link"><img class="bl_share__img" src="img/share_tw.png" alt=""></a>
+        <a href="#" class="bl_item_buttons__btn _blog">{{model.comments_count}} {{t 'comments'}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{blog/blog-slider data=model.blogPreview inRow=3 customControls=true}}
+  
+{{outlet}}

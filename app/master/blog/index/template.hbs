@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="bl_breadcrumps col-xs-12">
+  <ul class="bl_breadcrumps__list list-inline">
+    <li class="bl_breadcrumps__item">
+      {{#link-to 'master.index' class="bl_breadcrumps__link"}}
+        {{t 'home'}}  
+      {{/link-to}} &gt;
+    </li>
+    <li class="bl_breadcrumps__item">{{t 'blog.title'}}</li>
+  </ul>
+  </div>
+
+  {{#each preview in model.blogPreview}}
+    <div class="row">
+      <div class="bl_article_info col-xs-9">
+        <span class="bl_article__top _date">{{format-date preview.date}}</span>
+        <span class="bl_article__top _view">{{preview.views}}</span>
+        <span class="bl_article__top _comments">{{preview.comments_count}}</span>
+        <h1 class="bl_article__title">{{{preview.title}}}</h1>
+        <p class="bl_article__text">{{preview.content}}</p>
+        
+        <br>
+        {{#link-to 'master.blog.posts' preview.id class="btn btn-primary btn-lg pull-right"}}
+          {{t 'show_more'}}  
+        {{/link-to}}
+      </div>
+
+      <div class="bl_article__autor col-xs-3">
+        <img class="bl_article__autor-img" src="{{preview.author_img}}" alt="">
+        <p class="bl_article__autor-name">{{preview.author}}</p>
+        <p class="bl_article__autor-prof">{{t 'blog.author'}}</p>
+
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{outlet}}

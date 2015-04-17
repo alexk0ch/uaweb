@@ -1,0 +1,17 @@
+{{#link-to productType data classNameBindings="wrapperClass :bl-catalog__day__link"}}
+  <div class="bl-catalog__day__inner {{if popular '_popular' ''}} {{if blog '_blog' ''}}">   
+    <p class="bl-catalog__day__new">{{t 'new_item'}}</p>
+    <img class="bl-catalog__day__img {{if arttext '_arttext' ''}} {{if popular '_popular' ''}}" src="{{data.img}}" alt="">
+    <p class="bl-catalog__day__item_title {{if blog '_blog' ''}}">{{{data.title}}}</p>
+    {{#if data.cat}}
+      <p class="bl-catalog__day__item_category {{if popular '_popular' ''}}">{{data.cat}}</p>   
+    {{/if}}
+    {{#if data.vendor}}
+      <p class="bl-catalog__day__item_category {{if popular '_popular' ''}}">{{data.vendor}}</p>
+    {{/if}}
+    {{#if data.price}}
+      <p class="bl-catalog__day__item_price">{{data.price}} {{t 'UAH'}}.</p>
+    {{/if}}
+  </div>
+{{/link-to}}
+{{yield}}

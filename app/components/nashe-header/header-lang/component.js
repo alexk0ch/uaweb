@@ -10,5 +10,14 @@ export default Ember.Component.extend({
     }
     
     $elem.styler(); 
+  },
+
+  actions : {
+    localeSwitch : function () {
+      var locale = $(this.element).find('select').val();
+      var prevLocale = this.session.get('locale');
+      localStorage.setItem('locale', locale);
+      window.location.href = window.location.href.replace(prevLocale, locale);
+    }
   }
 });

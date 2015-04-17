@@ -1,0 +1,16 @@
+<div class="bl_blog__article col-xs-4">
+  <div class="bl_blog__item">
+    <img class="bl_blog__img" src="{{preview.img}}" alt="">
+    <h3 class="bl_blog__item-title">{{{preview.title}}}</h3>
+    <div class="bl_blog__autor">
+      <img class="bl_blog__autor-img" src="{{preview.author_img}}" alt="">
+      <p class="bl_blog__autor-name">{{preview.author}}</p>
+      <p class="bl_blog__autor-public">{{format-date preview.date}}</p>
+      <p class="bl_blog__autor-preview">{{preview.content}}</p>
+    </div>
+    {{#link-to 'master.blog.posts' preview.id class="bl_blog__comment"}}
+      <p class="bl_blog__comment-counter">{{preview.comments_count}}</p>
+    {{/link-to}}
+  </div>
+</div>
+{{yield}}

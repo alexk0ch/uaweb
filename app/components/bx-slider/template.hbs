@@ -5,9 +5,11 @@
       <div class="bl-slider__block-text">
           <h2 class="bl-slider__title">{{{slide.title}}}</h2>
           <p class="bl-slider__text">{{{slide.content}}}</p>
-          <a href="#" class="bl-slider__link">{{t 'show_more'}}</a>
+          {{#link-to slide.url class="bl-slider__link"}}
+            {{t 'show_more'}}
+          {{/link-to}}
       </div>
-      <img class="bl-slider__img" src="img/slide.jpg" alt="">
+      <img class="bl-slider__img" src="{{slide.img}}" alt="">
     </li>
     {{/each}}
   </ul>
